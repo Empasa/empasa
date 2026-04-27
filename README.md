@@ -1,27 +1,21 @@
-# Empasa
+# Empasa Technology
 
-A simple, responsive company presentation website for **Empasa**.
+Minimal static website for `empasa.io`.
 
-## Pages / Sections
+## Purpose
 
-| Section | Description |
-|---------|-------------|
-| **Hero** | Full-height landing screen with headline and call-to-action buttons |
-| **About** | Company overview and key statistics |
-| **Services** | Six service cards (Strategy, Technology, Design, Analytics, Marketing, Consulting) |
-| **Team** | Meet-the-team grid with role descriptions |
-| **Contact** | Contact details + message form |
+The site presents Empasa Technology as an independent software company focused on:
+
+- Marketplace platforms
+- AI-assisted workflows
+- Web and mobile applications
+
+It also includes basic company contact and privacy information for business inquiries, app review, and company verification.
 
 ## Tech Stack
 
-Plain HTML5, CSS3 (custom properties, grid, flex) and vanilla JavaScript — no build step required.
+Plain HTML and CSS. There is no build step.
 
 ## Running Locally
 
-Open `index.html` directly in your browser, or serve with any static HTTP server:
-
-```bash
-npx serve .
-# or
-python3 -m http.server 8080
-```
+Open `index.html` directly in a browser, or serve the folder with any static HTTP server.
