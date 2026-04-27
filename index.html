@@ -236,14 +236,14 @@
         </div>
 
         <div>
-          <form class="contact-form" id="contact-form" novalidate>
+          <form class="contact-form" id="contact-form">
             <input type="text" name="name" placeholder="Your Name" required />
             <input type="email" name="email" placeholder="Your Email" required />
             <input type="text" name="subject" placeholder="Subject" />
             <textarea name="message" placeholder="Tell us about your project…" required></textarea>
             <button type="submit" class="btn btn-primary">Send Message</button>
           </form>
-          <div class="form-success" id="form-success">
+          <div class="form-success" id="form-success" aria-live="polite" role="status">
             ✅ Thank you! We'll be in touch shortly.
           </div>
         </div>
