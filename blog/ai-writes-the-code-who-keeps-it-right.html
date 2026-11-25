@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Every team now builds with AI. The difference shows after month three, when the codebase starts to drift. The three layers we use to stop it, and five questions to ask any team that builds for you." />
+  <title>AI writes the code. What keeps it right six months later? | Empasa Technology</title>
+  <link rel="icon" type="image/png" href="../images/logo_empasa.png" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="logo" href="../index.html" aria-label="Empasa Technology home">
+        <img src="../images/logo_empasa.png" alt="" />
+        <span>Empasa Technology</span>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#company">Company</a>
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#track-record">Track record</a>
+        <a href="index.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <article class="section post">
+      <div class="container narrow">
+        <p class="post-meta">Delivering software &middot; 25 November 2026 &middot; Emanuel Pasat</p>
+        <h1>AI writes the code. What keeps it right six months later?</h1>
+        <p class="lead">Every software team builds with AI now, and the first weeks always look fast. The difference between teams shows around month three, when the product is large, every AI session starts with no memory of the last one, and the code quietly stops following its own rules.</p>
+        <h2>What drift looked like on a real product</h2>
+        <p>
+          We measured a large product that we deliver with AI: more than 40 batches of work and about 300 server-side
+          actions at the time. The findings were uncomfortable.
+        </p>
+        <ul>
+          <li>The architecture document listed six rules marked as enforced. Nothing actually ran them.</li>
+          <li>The code style checker had stopped working after a framework upgrade. It stayed broken for weeks, and nobody noticed, because nothing ran it either.</li>
+          <li>The same small helper functions had been written again and again, in file after file.</li>
+          <li>The one rule that never drifted was the one built into the code itself, so that breaking it was impossible instead of forbidden.</li>
+        </ul>
+        <p>
+          The cause was not careless people. Each piece of work was done by a fresh AI session that knew only what the
+          files in front of it said. A rule that lives in a document the session never opens does not exist.
+        </p>
+        <h2>Three layers, each covering the others</h2>
+        <ol>
+          <li>
+            <strong>The right way is the easy way.</strong> Shared building blocks sit where a session reaches first,
+            so the obvious choice is also the correct one.
+          </li>
+          <li>
+            <strong>A machine checks every change.</strong> A script counts the things that must not grow: duplicated
+            helpers, oversized files, shortcuts around the access checks. The numbers are stored, and a change that
+            raises any of them is refused. They can only go down.
+          </li>
+          <li>
+            <strong>The rules are written where the AI reads them.</strong> Every task prompt carries the same closing
+            line: which checks must pass and what proof to show before the work counts as done.
+          </li>
+        </ol>
+        <h2>Decisions belong to people, before the build</h2>
+        <p>
+          Every real choice in a batch of work becomes a short card: the question, a recommended answer, the
+          alternative and the evidence. The client rules on the cards before any code is written. If the AI meets a
+          new choice in the middle of a task, it stops and raises a card. It never decides inside the code.
+        </p>
+        <h2>Done means shown</h2>
+        <p>
+          A task is finished when its proof exists: the automated checks, a scripted walk through the real screens,
+          and screenshots that someone has opened and read. We learned that last part the hard way. A test can pass on
+          a screen that looks broken to any person who glances at it.
+        </p>
+        <h2>Five questions for any team that builds for you with AI</h2>
+        <ol>
+          <li>What stops the tenth AI session from undoing the rules the first one followed?</li>
+          <li>Which of your rules are checked by a machine on every change, and which only live in a document?</li>
+          <li>Who decides when the AI finds two ways to build something, and when do they decide?</li>
+          <li>What do you show me as proof that a piece of work is done?</li>
+          <li>Where do the lessons of this project go, so the next one starts with them?</li>
+        </ol>
+        <p>
+          Speed with AI is now available to everyone. A product that is still easy to change after a year is not,
+          and that comes from the engineering around the model. That is the part we sell.
+        </p>
+        <p class="post-back"><a href="index.html">&larr; All posts</a> &middot; Questions about a system like this? <a href="../index.html#contact">Write to us</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Empasa Technology. All rights reserved.</p>
+  </footer>
+</body>
+</html>

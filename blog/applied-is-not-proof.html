@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="An AI system reported a fix as applied. The record of what was written said something else. Why every automated change needs a receipt someone reads." />
+  <title>Applied is not proof | Empasa Technology</title>
+  <link rel="icon" type="image/png" href="../images/logo_empasa.png" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="logo" href="../index.html" aria-label="Empasa Technology home">
+        <img src="../images/logo_empasa.png" alt="" />
+        <span>Empasa Technology</span>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#company">Company</a>
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#track-record">Track record</a>
+        <a href="index.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <article class="section post">
+      <div class="container narrow">
+        <p class="post-meta">AI systems &middot; 25 November 2026 &middot; Emanuel Pasat</p>
+        <h1>&ldquo;Applied&rdquo; is not proof</h1>
+        <p class="lead">Our AI system reported a fix as applied. The record of what was actually written said something else. This is the check that caught it, and why we now run it after every automated change.</p>
+        <h2>What happened</h2>
+        <p>
+          We run an AI system that investigates support cases for a membership marketplace. It reads the member&rsquo;s
+          records, finds the cause, and proposes a fix as a short plan. A person approves each step before anything is
+          written.
+        </p>
+        <p>
+          Two cases that day needed four changes to members&rsquo; subscriptions. One of them was an end date. The plan proposed
+          30 October 2027. The person approved it. The screen showed &ldquo;Applied&rdquo;, with the proposed date
+          printed next to it.
+        </p>
+        <p>The value written to the member&rsquo;s record was 29 November 2027.</p>
+        <h2>Why the screen was wrong</h2>
+        <p>
+          The plan and the write were two different pieces of software. The plan showed what the AI had proposed. The
+          write went through an approval window, and that window had its own rule for date fields: start from the
+          current value and add 30 days. It replaced the proposed date with its own default. The new value was visible
+          in the window, and the approval went through anyway.
+        </p>
+        <p>
+          Nothing failed. No error was logged. Every part did what it was built to do, and the member ended up with a
+          wrong date under an &ldquo;Applied&rdquo; label.
+        </p>
+        <h2>What caught it</h2>
+        <p>
+          Every write in this system leaves a receipt: the value before and the value that was sent. Before telling the marketplace owner the case was closed, we read the receipt for each step and
+          compared it with the plan. Three steps matched. One did not.
+        </p>
+        <p>
+          The same receipt made the repair simple. It held the previous value, so the change was undone through the
+          product. The approval window was fixed the same day.
+        </p>
+        <h2>The rule we took from it</h2>
+        <ol>
+          <li>A status label describes the intention. Only the record of what was sent describes the action.</li>
+          <li>Every automated write stores the value before and the value sent, so it can be compared and undone.</li>
+          <li>Nobody reports a change as done until the receipt has been compared with the plan, step by step.</li>
+          <li>After an undo, check the live record too. A cached copy can keep showing the old state.</li>
+        </ol>
+        <p>
+          This is most of what separates an AI demo from an AI system a business can rely on. The model was right in
+          this case. The surrounding software was wrong, and only a plain written record made that visible before a
+          customer was told something false.
+        </p>
+        <p class="post-back"><a href="index.html">&larr; All posts</a> &middot; Questions about a system like this? <a href="../index.html#contact">Write to us</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Empasa Technology. All rights reserved.</p>
+  </footer>
+</body>
+</html>

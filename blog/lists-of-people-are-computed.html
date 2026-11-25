@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A language model summarised a list of affected customers, dropped two thirds of them and insisted the list was complete. Lists people act on must be computed, not written by the model." />
+  <title>The AI said all 15 and listed five | Empasa Technology</title>
+  <link rel="icon" type="image/png" href="../images/logo_empasa.png" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="logo" href="../index.html" aria-label="Empasa Technology home">
+        <img src="../images/logo_empasa.png" alt="" />
+        <span>Empasa Technology</span>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#company">Company</a>
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#track-record">Track record</a>
+        <a href="index.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <article class="section post">
+      <div class="container narrow">
+        <p class="post-meta">AI systems &middot; 25 November 2026 &middot; Emanuel Pasat</p>
+        <h1>The AI said &ldquo;all 15&rdquo; and listed five</h1>
+        <p class="lead">We asked an AI system which other members had the same payment problem as the one in front of it. The scan found 15. The report named five, and when asked for the rest, it said all 15 were visible and listed five.</p>
+        <h2>What went wrong</h2>
+        <p>
+          The scan itself was correct. It returned 15 members whose record did not point at the customer who had paid.
+          The trouble started when that result travelled through the system to the model that writes the report.
+        </p>
+        <ul>
+          <li>Each step&rsquo;s output was shortened to 1,200 characters before it was stored.</li>
+          <li>The model writing the final report saw at most 3,500 characters of each result.</li>
+          <li>The scan returned members and unrelated payers in one mixed list, so the cut could fall inside the group that mattered.</li>
+        </ul>
+        <p>
+          The model never saw all 15 names. It also added 43 payers who had no member record at all, and reported
+          &ldquo;58 other members&rdquo;. Asked to complete the list, it did what language models do with a gap: it
+          answered with confidence.
+        </p>
+        <h2>Why this matters more than a wrong sentence</h2>
+        <p>
+          A list of people is something the business acts on. The marketplace owner was going to email each member on
+          it. A list with ten people missing does not look shorter. It looks complete, and ten customers keep their
+          problem.
+        </p>
+        <h2>The fix</h2>
+        <ol>
+          <li>The list is now built by code, straight from the scan&rsquo;s full result, and shown as a table with one row per person.</li>
+          <li>The count in the report comes from that table. If the model writes a different number, the computed one replaces it.</li>
+          <li>The model is told to name up to five examples and point at the table for the rest.</li>
+          <li>People are counted only in a group that applies to them. A payer with no member record is not an affected member.</li>
+        </ol>
+        <p>
+          The general rule: a model may explain a list, but it may not be the list. Anything a person will act on row
+          by row is computed, counted and displayed by ordinary software, where a missing row is a bug someone can find.
+        </p>
+        <p class="post-back"><a href="index.html">&larr; All posts</a> &middot; Questions about a system like this? <a href="../index.html#contact">Write to us</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Empasa Technology. All rights reserved.</p>
+  </footer>
+</body>
+</html>
